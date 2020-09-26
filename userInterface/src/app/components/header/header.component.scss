@@ -1,0 +1,117 @@
+// Header Component Styling
+
+// Kept position sticky of Header
+.navbar{
+  padding-right: 2rem;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+  display: inline-flex;
+  //justify-content: space-between;
+}
+
+.nav-space{
+  margin-right: 10px;
+}
+
+.right-side-comps{
+  padding-right: 1rem;
+  text-align: center;
+  display: inline-flex;
+}
+// Search box SCSS
+.search-box-input{
+  width: 500px;
+  height: 40px;
+  margin-left: 8rem;
+  border-radius: 10px;
+  margin-top: 3px;
+}
+// Styling for brand name
+.brand-name{
+  font-family: 'Acme', sans-serif;;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+.cart{
+  margin-left: 3rem;
+}
+.search{
+  height: 20px;
+  width: 25px;
+  font-size: 35px;
+}
+
+.searchBtn{
+  background-color: black;
+  color: white;
+  font-family: cursive;
+  font-size: 20px;
+  margin-left: 5px;
+  width: 60px;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  height: 40px;
+}
+// Login button CSS
+.login{
+  width: 100px;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  margin-right: 1em;
+  background-color: black;
+  color: white;
+  font-family: cursive;
+  font-size: 20px;
+  margin-left: 5px;
+
+}
+// Hover functionality on Login
+.login:hover{
+  background-color: white;
+  color: black;
+}
+
+.searchtools{
+  display: inline-flex;
+  text-align: center;
+}
+
+.cart{
+  background: none;
+  text-align: center;
+  //border: 1px solid white;
+  padding: 0px;
+  margin-right: 2em;
+  border: none;
+  height: 10px;
+  width: 10px;
+}
+
+.CartIcon{
+  font-size: 40px;
+  margin-top: 5px;
+  color: white;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+// Hover functionality on cart
+.CartIcon:hover{
+  color: black;
+}
+// Hover functionality on search
+.searchBtn:hover{
+  background: white;
+}
+.search:hover{
+  color: black;
+}

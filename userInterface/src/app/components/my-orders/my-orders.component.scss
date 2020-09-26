@@ -1,0 +1,49 @@
+// SCSS Stylings
+
+// Defining width
+.item-card {
+  max-width: 600px;
+}
+
+.cartItem{
+  margin-left: 25%;
+}
+// Styling for Popup
+.detailsPop{
+  margin-left: 20px;
+  font-size: 15px;
+  background: rgb(210, 227, 247);
+  border-radius: 5px;
+}
+
+.heading{
+  margin-left: 25%;
+}
+
+.titleDiv{
+  float: left;
+  width: 82%;
+}
+.priceText{
+  margin-top: 10px;
+  float: left;
+  width:10%;
+}
+
+.cardTitle{
+  width: 600px;
+  height: 35px;
+}
+
+
+.total-card {
+  height: 30px;
+  max-width: 600px;
+}
+
+.totalText{
+  color: rgb(48, 48, 216);
+  margin-top: 4px;
+  float: left;
+  width:10%;
+}

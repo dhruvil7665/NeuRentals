@@ -1,0 +1,75 @@
+<!--Page design to display the post details to customer -->
+<head>
+  <link href="//cdn.syncfusion.com/ej2/fabric.css" rel="stylesheet" />
+</head>
+<div class="mainDiv">
+<div class="post-details">
+  <h1>{{post.title}}</h1>
+  <hr>
+  <h3>Category</h3>
+  <p>{{post.category}}</p>
+  <hr>
+  <!--More/Less data read feature-->
+  <h3>Details</h3>
+  <p>{{post.description | shorten: maxLength: '...'}}
+    <span *ngIf="postDescription.length > maxLength" (click)="showAll()" class="link">Read More</span>
+    <span *ngIf="maxLength > 500" (click)="showLess()" class="link">Read Less</span>
+  </p>
+  <hr>
+  <!--Addition of dateTime picker for customer to select a date for renting-->
+  <mat-radio-group [(ngModel)]="selectedTimeFrame">
+    <mat-radio-button *ngFor="let timeFrame of timeFrames" [value]="timeFrame">{{timeFrame}}</mat-radio-button>
+  </mat-radio-group>
+  <br>
+  <br>
+  <ejs-datetimepicker id='datetimepickerFrom' #ejDateTimePicker [(value)]='startDate' placeholder='Select a date' (change)="setTimeFrame($event.value)"></ejs-datetimepicker>
+  <ejs-datetimepicker id='datetimepickerTo' #ejDateTimePicker [(value)]='endDate' placeholder='Select a date'></ejs-datetimepicker>
+  <br>
+  <br>
+  <hr>
+  <div>
+    <div class="display-pickup-location">
+      <h3>PickUp Location</h3>
+      <p>{{post.pickupLocation}}</p>
+    </div>
+    <div class="display-price">
+      <h3 >Price</h3>
+      <p *ngFor="let item of post.rentingWindowTypeWithPrice">
+        {{item.type}} : ${{item.price}}
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <!--Add to cart button-->
+  <button class="addtoCart" mat-button (click)="addToCart()"><!--<mat-icon>shopping_cart</mat-icon>-->Add to Cart</button>
+<!--  <div id="map"></div>-->
+<!--  <agm-map [latitude]="lat" [longitude]="lng">-->
+<!--    <agm-direction [origin]="origin" [destination]="destination">-->
+<!--    </agm-direction>-->
+<!--  </agm-map>-->
+  <!--  <p>Example of the range selection</p>-->
+
+<!--  <ngb-datetimepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">-->
+<!--  </ngb-datetimepicker>-->
+
+<!--  <ng-template #t let-date let-focused="focused">-->
+<!--  <span class="custom-day"-->
+<!--        [class.focused]="focused"-->
+<!--        [class.range]="isRange(date)"-->
+<!--        [class.faded]="isHovered(date) || isInside(date)"-->
+<!--        (mouseenter)="hoveredDate = date"-->
+<!--        (mouseleave)="hoveredDate = null">-->
+<!--    {{ date.day }}-->
+<!--  </span>-->
+<!--  </ng-template>-->
+
+<!--  <hr>-->
+
+<!--  <pre>From: {{ fromDate | json }} </pre>-->
+<!--  <pre>To: {{ toDate | json }} </pre>-->
+</div>
+
+<app-post-images [post] = "post" style="float: right; width: 47%"></app-post-images>
+
+</div>

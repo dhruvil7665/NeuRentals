@@ -1,0 +1,105 @@
+#map{
+  height: 50px;
+  width: 50px;
+}
+
+//Styling the block for post details view
+.post-details,app-post-images{
+  float: left;
+  border: 1px solid black;
+}
+
+.mainDiv{
+  height: 70%;
+  width: 100%;
+
+}
+.post-details{
+  width: 50%;
+  overflow-wrap: break-word;
+  background-color: white;
+}
+
+app-post-images {
+  width: 40%;
+}
+
+.link{
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+mat-radio-button{
+  margin-left: 1em;
+}
+
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range, .custom-day:hover {
+  background-color: rgb(2, 117, 216);
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgba(2, 117, 216, 0.5);
+}
+
+#datetimepickerFrom,#datetimepickerTo{
+  float: left;
+  width: 40%;
+  margin-left: 3em;
+}
+
+//Styling of AddToCart button
+.addtoCart{
+  float: right;
+  background-color: black;
+  color: white;
+  font-family: cursive;
+  font-size: 20px;
+  margin-left: 5px;
+  width: 180px;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  margin-right: 1em;
+}
+
+.addtoCart:hover{
+  font-size: 18px;
+}
+
+.display-pickup-location,.display-price{
+  float: left;
+}
+
+.display-pickup-location{
+  width: 80%;
+}
+
+.display-price{
+  width: 20%;
+}
+
+//#map {
+//
+//  height: 100vh;
+//
+//  width: 100vw;
+//
+//}
+//
+//agm-map {
+//  height: 400px;
+//}

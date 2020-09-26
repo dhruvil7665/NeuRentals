@@ -1,0 +1,71 @@
+// Created Variables for color and font
+$background-color: rgba(0,0,0,0);
+$brand-color1: rgba(0,128,128,0.8);
+$container-color: rgb(240,240,240);
+$color-gray:rgb(128,128,128);
+$color-light-gray:rgb(200,200,200);
+$color-white:rgb(255,255,255);
+
+
+$fontFamily: 'Raleway', sans-serif;
+$fontSmallText: 'Poppins', sans-serif;
+
+// Mixin for text
+@mixin small-text{
+  font-size: 13px;
+  font-weight: lighter;
+  color: $color-gray;
+  font-family: $fontSmallText;
+}
+
+// Used mixin
+.grid1Text{
+  @include small-text;
+  padding-right: 4%;
+
+}
+
+
+.footer-margin{
+  margin-left: 10%;
+}
+
+.footerGridCommon{
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
+  float:left;
+  position: relative;
+  text-decoration: none;
+}
+// Extended footerGridCommon
+
+.footerGrid{
+  @extend .footerGridCommon;
+  height: 235px;
+  width:250px;
+}
+// Extended footerGridCommon
+
+.footerGridOne{
+  @extend .footerGridCommon;
+  height: 235px;
+  width:270px;
+}
+// for displaying links as normal text
+a{
+  text-decoration: none;
+}
+// for removing the list circle
+ul{
+  list-style-type: none;
+  margin-left: -35px;
+}
+.footer-background{
+  background-color: blue;
+}
+footer{
+  bottom: 0;
+  //position: fixed;
+}
+

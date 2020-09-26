@@ -1,0 +1,85 @@
+//Styling for button div
+.addButton{
+  margin: 1%;
+}
+
+input, textarea{
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+
+//Styling for add post button
+.addPost{
+  background-color: black;
+  color: white;
+  font-family: cursive;
+  font-size: 17px;
+  margin-left: 5px;
+  width: 105px;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  margin-right: 1em;
+}
+
+.mat-button:hover{
+  font-size: 18px;
+}
+
+.addPost:hover{
+  font-size: 18px;
+}
+
+//Styling for displaying the individual post in block
+.display-post-list{
+  border: 1px solid black;
+  width: 32%;
+  height: 100%;
+  float: left;
+  margin: 5px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  .checkbox{
+    margin-top: 5px;
+  }
+  .title{
+    margin-left: 1em;
+    border: none;
+    padding: 0;
+    width: 70%;
+  }
+  .desc{
+    border: none;
+    width: 95%;
+  }
+  .category{
+    border: none;
+  }
+  .subcategory{
+    border: none;
+  }
+
+}
+
+.type{
+  float: left;
+  width: 25%;
+}
+
+.price{
+  float: left;
+  width: 70%;
+  border: none;
+}
+
+.location{
+  border: none;
+}
+
+.bckgnd{
+  background-image: linear-gradient(0.25turn, rgba(251, 253, 253, 0.8), rgba(248, 252, 252, 0.8)), url(./../../../assets/img/rent.jpg);
+  }

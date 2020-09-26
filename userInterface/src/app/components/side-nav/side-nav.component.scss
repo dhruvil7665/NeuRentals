@@ -1,0 +1,27 @@
+mat-sidenav-container{
+  height: 100%;
+}
+mat-sidenav, mat-sidenav-content{
+  //padding: 16px;
+}
+mat-sidenav{
+  background-color: lightcoral;
+  width: 270px;
+}
+
+.menuBtn{
+  background-color: black;
+  color: white;
+  font-family: cursive;
+  font-size: 20px;
+  margin-left: 5px;
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.menuBtn:hover{
+  background-color: rgb(35, 35, 156);
+}

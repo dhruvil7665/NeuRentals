@@ -1,0 +1,67 @@
+<!--My Cart Component-->
+<div class="heading">
+    <br>
+    <h2><b>Order Details</b></h2>
+</div>
+<!--Used Angular Material Mat Card Reader to display the cart details-->
+<div class="cartItem" *ngFor="let cItem of cartItems">
+    <mat-card class="item-card">
+        <mat-card-header>
+            <!--<div mat-card-avatar class="example-header-image"></div>-->
+            <mat-card-title>
+                <div class="cardTitle">
+                    <div class="titleDiv">
+                      <!--Displaying title and price and created a button for details on click of which Product details will be shown -->
+                        <button mat-button placement="right" [ngbPopover]="popContent"><b>{{cItem.title}}</b></button></div>
+                    <div class="priceText">${{cItem.price}}</div>
+                </div>
+            </mat-card-title>
+
+            <ng-template #popContent>
+
+                <p class="detailsPop">
+                  Laptops and 2-in-1s with strong performance for everyday productivity designed for small and growing businesses.
+                </p>
+            </ng-template>
+
+            <mat-card-subtitle>&nbsp; &nbsp; &nbsp;{{cItem.category}}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-actions>
+
+            <!--Button to remove items from cart-->
+            &nbsp; &nbsp; &nbsp;<button mat-button (click)="deleteItem(cItem)">REMOVE</button>
+        </mat-card-actions>
+    </mat-card>
+    <br>
+</div>
+<!--Used Ng if directive-->
+<div class="cartItem" *ngIf="cartItems || cartItems.length > 0">
+    <mat-card class="total-card">
+        <mat-card-header>
+            <mat-card-title>
+                <div class="cardTitle">
+                    <div class="titleDiv">
+                        <b>Total</b>
+                    </div>
+                  <!--Displaying total price-->
+                    <div class="totalText">${{totalPrice}}</div>
+                </div>
+            </mat-card-title>
+        </mat-card-header>
+    </mat-card>
+</div>
+
+<br>
+<!--Place Order button , click it to redirect to the next page-->
+<div class="cartItem">
+        <button class="placeOrderBtn" mat-button placement="right" [ngbPopover]="popContent">
+                <a routerLink="summary" routerLinkActive="router-link-active">Place Order </a></button>
+</div>
+<br>
+<br>
+<!--
+<p>You can pass an existing component as content of the modal window. In this case remember to add content component
+        as an <code>entryComponents</code> section of your.</p>
+
+        <button mat-raised-button (click)="openDialog()">Pick one</button> -->

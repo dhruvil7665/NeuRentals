@@ -1,0 +1,34 @@
+<!-- My orders page-->
+<div class="heading">
+  <h2>My Orders</h2>
+</div>
+<!-- Displaying my cart items using ng for-->
+<div class="cartItem" *ngFor="let oItem of myRentings">
+  <mat-card class="item-card">
+    <mat-card-header>
+
+      <mat-card-title>
+        <div class="cardTitle">
+          <div class="titleDiv">
+            <button mat-button placement="right" [ngbPopover]="popContent"><b>{{oItem.postId}}</b></button></div>
+          <div class="priceText">${{oItem.cost}}</div>
+        </div>
+      </mat-card-title>
+      <ng-template #popContent>
+        <p class="detailsPop">
+          Laptops and 2-in-1s with strong performance for everyday productivity designed for small and growing businesses..
+        </p>
+      </ng-template>
+      <mat-card-subtitle>{{oItem.sDate}}</mat-card-subtitle>
+      <mat-card-subtitle>&nbsp; &nbsp; &nbsp;{{oItem.eDate}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+  <br>
+</div>
+<!-- Used NgIf Directive-->
+<div class="cartItem" *ngIf="myRentings || myRentings.length > 0">
+  <mat-card class="total-card">
+    <mat-card-header>
+    </mat-card-header>
+  </mat-card>
+</div>

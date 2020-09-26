@@ -1,0 +1,73 @@
+// SCSS Stylings
+.item-card {
+    max-width: 600px;
+  }
+
+  .cartItem{
+      margin-left: 25%;
+  }
+
+  .detailsPop{
+      margin-left: 20px;
+      font-size: 15px;
+      background: rgb(210, 227, 247);
+      border-radius: 5px;
+  }
+
+  .heading{
+      margin-left: 25%;
+  }
+
+  .titleDiv{
+      float: left;
+      width: 82%;
+  }
+  .priceText{
+      margin-top: 10px;
+      float: left;
+      width:10%;
+  }
+
+  .cardTitle{
+      width: 600px;
+      height: 35px;
+  }
+
+
+  .total-card {
+    height: 50px;
+    max-width: 600px;
+  }
+
+  .totalText{
+    color: rgb(48, 48, 216);
+    float: left;
+    width:10%;
+}
+
+//Place Order Button
+.placeOrderBtn{
+        background-color: black;
+        color: white;
+        font-family: cursive;
+        font-size: 20px;
+        margin-left: 20%;
+        width: 150px;
+        margin-top: 5px;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        height: 40px;
+        margin-right: 1em;
+
+      }
+
+.placeOrderBtn:hover{
+    font-size: 18px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,47 @@
+@import '~@angular/material/theming';
+
+.display-image, .display-image-list{
+  float: left;
+  height: 25em;
+ // border: 1px solid black;
+}
+
+.display-image{
+  width: 70%;
+  img{
+    width: 26em;
+    height: 25em;
+  }
+}
+
+.display-image-list{
+  width: 20%;
+}
+
+div {
+  ul {
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 0px;
+    li {
+      height: 5em;
+      width: 6em;
+      img {
+        //border: 1px solid black;
+        height: 5em;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 6em;
+        border-radius: 5%;
+
+      }
+    }
+  }
+}
+
+.list-image:hover{
+  @include mat-elevation(24);
+}
+
+

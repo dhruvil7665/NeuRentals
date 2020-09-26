@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+  <mat-card-header mat-card >
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title >{{post.title}}</mat-card-title>
+    <mat-card-subtitle>{{post.subCategory}}</mat-card-subtitle>
+  </mat-card-header>
+<!--  <img mat-card-image src='../../../assets/images-of-posts/{{post.photos[0]}}' alt="Photo of a Shiba Inu">-->
+   <img mat-card-image src="../../../assets/images-of-posts/{{post.photos[0]}}" alt="Photo of a Shiba Inu">
+<!--  <img mat-card-image src="../../../assets/images-of-posts/laptop.jpg">-->
+  <mat-card-content>
+    <p>
+     Description: {{post.description}}
+    </p>
+    <p>Pickup Location:{{post.pickupLocation}}</p>
+    <p>Renting Window Type: {{post.rentingWindowType}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="gotoProductDetails()">VIEW DETAILS</button>
+    <!-- <button mat-button>SHARE</button> -->
+  </mat-card-actions>
+</mat-card>
+

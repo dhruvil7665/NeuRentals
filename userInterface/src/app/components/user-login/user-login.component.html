@@ -1,0 +1,38 @@
+<div id="loginPopUp" [ngStyle]="{display: show ? 'block' : 'none'}">
+  <div class="popup-content">
+    <button mat-button title="Close" class="close_modal" (click)="closeCallback()">Close</button>
+    <!--using angular material tabs-->
+    <mat-tab-group>
+
+      <mat-tab label="Sign In">
+        <div class="example-small-box mat-elevation-z4">
+          <mat-form-field class="username">
+            <input matInput placeholder="User Name" [(ngModel)]="loginUser">
+          </mat-form-field><br>
+          <mat-form-field class="password">
+            <input matInput placeholder="Password" [(ngModel)]="loginPass">
+          </mat-form-field><br>
+            <button mat-button class="loginButton" (click)="loginFn()">Login</button>
+
+        </div>
+      </mat-tab>
+      <mat-tab label="Sign Up">
+        <div class="example-large-box mat-elevation-z4">
+          <mat-form-field class="username">
+            <input matInput placeholder="User Name" [(ngModel)]="username">
+          </mat-form-field><br>
+          <mat-form-field class="password">
+            <input matInput placeholder="Password" [(ngModel)]="password">
+          </mat-form-field><br>
+          <mat-form-field class="retrypassword">
+            <input matInput placeholder="Retype Password" [(ngModel)]="retypepassword">
+          </mat-form-field><br>
+          <button mat-button class="loginButton" (click)="registerUser()">Register</button>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+
+

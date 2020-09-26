@@ -1,0 +1,58 @@
+
+<div id="collapseExample" [ngbCollapse]="false">
+<!--code for sidenav toggle div-->
+  <mat-sidenav-container class="postsDisplay-Container" >
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed) ="events.push('close!')">
+     <p class="crossButton" (click)="sidenav.toggle()">Close</p>
+      <div class="filterDiv">
+        <label id="example-radio-group-label"></label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="rentingType">
+          <mat-radio-button class="example-radio-button" *ngFor="let frame of frames" [value]="frame" (change)="postService.rentingType=frame">
+            {{frame}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <label id="example-radio-group-label2">By Category</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="subCat">
+          <mat-radio-button class="example-radio-button" *ngFor="let cat of cats" [value]="cat" (change)="postService.subCat=cat">
+            {{cat}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <button (click)="reset()">Reset</button>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <p><button mat-button class="filterText" (click)="sidenav.toggle()"><mat-icon class="filterText">filter_list</mat-icon><b>&nbsp; Filter</b></button></p>
+      <div *ngFor="let post of filterList()">
+        <app-posts [post]="post"></app-posts>
+      </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
+
+
+<!--<p>Example of the range selection</p>-->
+
+<!--<ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">-->
+<!--</ngb-datepicker>-->
+
+<!--<ng-template #t let-date let-focused="focused">-->
+<!--  <span class="custom-day"-->
+<!--        [class.focused]="focused"-->
+<!--        [class.range]="isRange(date)"-->
+<!--        [class.faded]="isHovered(date) || isInside(date)"-->
+<!--        (mouseenter)="hoveredDate = date"-->
+<!--        (mouseleave)="hoveredDate = null">-->
+<!--    {{ date.day }}-->
+<!--  </span>-->
+<!--</ng-template>-->
+
+<!--<hr>-->
+
+<!--<pre>From: {{ fromDate | json }} </pre>-->
+<!--<pre>To: {{ toDate | json }} </pre>-->

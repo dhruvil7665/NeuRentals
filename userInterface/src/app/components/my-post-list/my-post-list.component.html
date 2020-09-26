@@ -1,0 +1,31 @@
+<div>
+  <div class="mainDIv"><div class="addButton">
+    <!--Button that will route to add new post for users-->
+  <button class="addPost" mat-button [routerLink]="['addPost']">Add Post</button>
+</div>
+
+<!--Displays list of posts posted by logged in user-->
+<div class="display-post-list" *ngFor="let post of myPostList">
+  <!--Checkbox to inactive or active the post-->
+  <mat-checkbox class="checkbox"></mat-checkbox>
+  <input type="text" [value]="post.title" class="title"/>
+  <!--Button to delete the post-->
+  <button mat-button (click)="deletePost(post)">Delete</button><hr>
+  <textarea class="desc" [value]="post.description"></textarea><hr>
+  Category: <input type="text" [value]="post.category" class="category"/><hr>
+  Sub Category: <input type="text" [value]="post.subCategory" class="subcategory"/><hr>
+  <!--Date time picker to giv ethe start and end date of renting-->
+  Rent Start Date: <ejs-datetimepicker id='datetimepickerFrom' #ejDateTimePicker [(value)]="post.rentingWindowTimeFrame[0].startDate"></ejs-datetimepicker>
+  Rent End Date: <ejs-datetimepicker id='datetimepickerTo' #ejDateTimePicker [(value)]="post.rentingWindowTimeFrame[0].endDate"></ejs-datetimepicker>
+  <hr>
+  <!--Since there are 3 types of rents, looping to the array and getting the rent price-->
+  Rent Cost:
+  <div *ngFor="let item of post.rentingWindowTypeWithPrice">
+    <div class="type">{{item.type}} : $</div><input class="price" type="text" [value]="item.price"/>
+  </div><br>
+  PickUp Location: <input type="text" [value]="post.pickupLocation" class="location">
+</div>
+</div>
+
+<router-outlet></router-outlet>
+</div>

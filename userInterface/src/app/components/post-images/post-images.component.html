@@ -1,0 +1,8 @@
+<div>
+  <div class="display-image"><img src="../../../assets/images-of-posts/{{postImageDisplay}}"></div>
+  <div class = display-image-list>
+    <ul *ngFor="let item of post.photos">
+      <li><img src="../../../assets/images-of-posts/{{item}}" (mouseenter)="postImageDisplay=item" class="list-image"></li>
+    </ul>
+  </div>
+</div>

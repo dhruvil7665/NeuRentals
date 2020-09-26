@@ -1,0 +1,26 @@
+<!-- Displaying categories in tree format-->
+
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+<!--     Displays child nodes on click of button-->
+
+    <button mat-icon-button disabled></button>
+    <a  [routerLink]="['/posts']" [state]="node.item"><button mat-button (click)="communication.sendMessage(node.item)">
+      {{node.item}}</button></a>
+  </mat-tree-node>
+  <!--   Creates padding when child node is present-->
+
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+    <button mat-icon-button
+            [attr.aria-label]="'toggle ' + node.filename" matTreeNodeToggle>
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>{{node.item}}
+<!--   Progress bar to display if the tree is currently loading to show child nodes-->
+
+    <mat-progress-bar *ngIf="node.isLoading"
+                      mode="indeterminate"
+                      class="example-tree-progress-bar"></mat-progress-bar>
+  </mat-tree-node>
+</mat-tree>

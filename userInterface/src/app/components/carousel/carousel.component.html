@@ -1,0 +1,15 @@
+<!--Displaying images in the form of slider in background-->
+<ngb-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+  <!--Ng For loop for images-->
+  <ng-template ngbSlide *ngFor="let img of images; index as i">
+    <div class="carousel-caption">
+      <h3></h3>
+    </div>
+      <div class="picsum-img-wrapper">
+        <!--Fetching all images from assets-->
+        <img src = "../../../assets/img/{{img}}" alt="My image {{i + 1}} description" class="carousal-img">
+      </div>
+  </ng-template>
+</ngb-carousel>
+
+<hr>

@@ -1,0 +1,36 @@
+.postsDisplay-Container{
+  position: absolute;
+
+  height:100%;
+  width: 100%;
+}
+
+mat-sidenav{
+  width: 400px;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.crossButton{
+  margin-left: 340px;
+  cursor: pointer;
+}
+
+
+.filterIcon{
+  font-size: 30px;
+
+}
+
+.filterText:hover{
+  color: blue;
+  font-size: 20px;
+}

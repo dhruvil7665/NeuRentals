@@ -1,0 +1,29 @@
+<!--Header Component-->
+<!--Header Component. Used Angular Material Mat Toolbar-->
+<mat-toolbar color="primary" class="navbar">
+
+  <a routerLink=""><span class="brand-name">NEU Rentals</span></a>
+
+  <div class="searchtools">
+  <input type="text" id="" class = "search-box-input" placeholder="search products">
+  <button class="searchBtn" (click)="searchProduct()"><mat-icon class="search">search</mat-icon></button>
+  </div>
+
+  <div class = "right-side-comps">
+
+    <button  class="cart" >
+      <a routerLink="myCart" routerLinkActive="router-link-active"><mat-icon class="CartIcon">shopping_cart</mat-icon></a>
+    </button>
+    <button (click)="toggleModal()" class="login">Login</button>
+    <!-- My Profile Dropdown. Shows a list of actions user can perform/view information about in this section-->
+      <app-my-profile></app-my-profile>
+    <!-- </button> -->
+  </div>
+</mat-toolbar>
+<!--User Login Component. Calling modal on click of login button -->
+<app-user-login
+
+  [show]="showModal"
+  [closeCallback]="toggleModal"
+
+></app-user-login>

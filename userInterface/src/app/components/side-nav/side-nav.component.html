@@ -1,0 +1,20 @@
+<!--<mat-sidenav-container></mat-sidenav-container>-->
+<!--<mat-sidenav opened>Sidenav</mat-sidenav>-->
+<!--  <mat-sidenav-content>Main</mat-sidenav-content>-->
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav [mode]="over" [(opened)]="opened">
+    <app-category></app-category>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <p><button class="menuBtn" mat-button (click)="sidenav.toggle()">Menu>></button></p>
+
+<!--    <span><app-header></app-header></span>-->
+<!--    <span><button mat-button (click)="sidenav.toggle()">Toggle</button></span>-->
+<!--    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>-->
+    <app-carousel></app-carousel>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

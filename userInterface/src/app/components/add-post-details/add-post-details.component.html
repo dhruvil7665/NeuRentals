@@ -1,0 +1,77 @@
+<!--Page design for addition of post-->
+<div class="example-container">
+  <div class="innerContainer">
+    <mat-form-field class="title">
+      <input matInput placeholder="Post Title" [(ngModel)]="postTitle">
+    </mat-form-field>
+    <mat-form-field class="category">
+      <mat-select placeholder="Add Category" [(ngModel)]="postCategory">
+        <mat-option value="Electronics">Electronics</mat-option>
+        <mat-option value="Fitness Equipments">Fitness Equipments</mat-option>
+        <mat-option value="Gaming">Gaming</mat-option>
+        <mat-option value="Study Materials">Study Materials</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!--Getting subCategory as per Category-->
+    <mat-form-field class="subCategory">
+      <mat-select placeholder="Add Sub Category" [(ngModel)]="postSubCategory">
+        <mat-option *ngIf="postCategory=='Electronics'?true:false" value="Laptops">Laptops</mat-option>
+        <mat-option *ngIf="postCategory=='Electronics'?true:false" value="Cameras">Cameras</mat-option>
+        <mat-option *ngIf="postCategory=='Electronics'?true:false" value="Projector">Projector</mat-option>
+        <mat-option *ngIf="postCategory=='Fitness Equipments'?true:false" value="Treadmill">Treadmill</mat-option>
+        <mat-option *ngIf="postCategory=='Fitness Equipments'?true:false" value="Dumbbell Set">Dumbbell Set</mat-option>
+        <mat-option *ngIf="postCategory=='Gaming'?true:false" value="Playstation">Playstation</mat-option>
+        <mat-option *ngIf="postCategory=='Gaming'?true:false" value="FoosballTable">FoosballTable</mat-option>
+        <mat-option *ngIf="postCategory=='Study Materials'?true:false" value="Books">Books</mat-option>
+        <mat-option *ngIf="postCategory=='Study Materials'?true:false" value="Video Lecture CDs">Video Lecture CDs
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="desc">
+      <textarea matInput placeholder="Post Description" [(ngModel)]="postDesc"></textarea>
+    </mat-form-field>
+    <mat-form-field class="pickUpLocation">
+      <textarea matInput placeholder="PickUp Location" [(ngModel)]="postPickUpLocation"></textarea>
+    </mat-form-field>
+    <mat-form-field class="contactNo">
+      <input matInput placeholder="Contact No." [(ngModel)]="postContactNo">
+    </mat-form-field>
+    <!--Text field for price input should be enabled or disabled as per the checkbox-->
+    <div>
+      <mat-checkbox class="type" [(ngModel)]="dailyChecked">Daily</mat-checkbox>
+      <mat-form-field class="price">
+        <input matInput placeholder="Daily Price in $" [disabled]="!dailyChecked" [(ngModel)]="postDailyPrice">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-checkbox class="type" [(ngModel)]="weeklyChecked">Weekly</mat-checkbox>
+      <mat-form-field class="price">
+        <input matInput placeholder="Weekly Price in $" [disabled]="!weeklyChecked" [(ngModel)]="postWeeklyPrice">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-checkbox class="type" [(ngModel)]="monthlyChecked">Monthly</mat-checkbox>
+      <mat-form-field class="price">
+        <input matInput placeholder="Monthly Price in $" [disabled]="!monthlyChecked" [(ngModel)]="postMonthlyPrice">
+      </mat-form-field>
+    </div>
+    <!--DateTime picker to add the start and end dates-->
+    <ejs-datetimepicker id='datetimepickerFrom' #ejDateTimePicker [(value)]='rentStartDate'
+      placeholder='Select a start date for renting' format="MM/dd/yyyy HH:mm"></ejs-datetimepicker>
+    <ejs-datetimepicker id='datetimepickerTo' #ejDateTimePicker [(value)]='rentEndDate'
+      placeholder='Select an end date for renting' format="MM/dd/yyyy HH:mm"></ejs-datetimepicker>
+    <br>
+    <!--Div to display added images by user-->
+    <div class="form-group">
+      <br>
+      <input type="file" name="image" (change)="addImageUrls($event)" />
+    </div>
+    <!--Div for adding post images -->
+    <mat-grid-list rowHeight="100px" cols="8">
+      <mat-grid-tile *ngFor="let item of imageUrls" class="image-preview mb-3">
+        <img src="{{item}}" />
+      </mat-grid-tile>
+      <button mat-button (click)="addPost()" class="add-post-button">Add Post</button>
+    </mat-grid-list>
+  </div>
+</div>
